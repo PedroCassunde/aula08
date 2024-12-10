@@ -29,18 +29,18 @@ try {
   return (
         <>
         <main>
-          <form action={Registrar}>
+          <form onSubmit={Registrar}>
             <input
             type="text"
             value={nome}
             placeholder="Nome"
-            onChange={(event) => setNome(event.target,value)}/>
+            onChange={(event) => setNome(event.target.value)}/>
 
             <input
             type="text"
             value={email}
             placeholder="Email"
-            onChange={(event) => setEmail(event.target,value)}/>
+            onChange={(event) => setEmail(event.target.value)}/>
             <button
             type="submit">Registrar</button>
           </form>
