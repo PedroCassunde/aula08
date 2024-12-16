@@ -5,16 +5,16 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cors());
 
-let livros = [];
+let usuarios = [];
 
-app.post('/livros', (req, res) => {
+app.post('/usuarios', (req, res) => {
     const { nome, email } = req.body;
     
     if (!nome || !email) {
         return res.status(400).json({ erro: 'Nome e email são obrigatórios' });
     }
 
-    const novoUsuario = { id: livros.length + 1, nome, email };
+    const novoUsuario = { id: usuarios.length + 1, nome, email };
     usuarios.push(novoUsuario);
     
     res.status(201).json(novoUsuario);
