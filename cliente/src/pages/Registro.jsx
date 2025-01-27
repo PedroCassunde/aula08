@@ -4,7 +4,12 @@ import { useNavigate } from "react-router-dom";
 export default function Registro() {
 
   const [nome, setNome] = useState('');
-  const [email, setEmail] = useState('');
+  const [autor, setAutor] = useState('');
+  const [genero, setGenero] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [classificacao, setClassificacao] = useState('');
+  const [colecao, setColecao] = useState('');
+  const [avaliacoes, setAvaliacoes] = useState('');
 
   const navigation = useNavigate();
 
@@ -16,7 +21,12 @@ try {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       nome: nome,
-      email: email
+      autor: autor,
+      genero: genero,
+      descricao: descricao,
+      classificacao: classificacao,
+      colecao: colecao,
+      avaliacoes: avaliacoes,
     })
   });
   if(resposta.ok){
@@ -29,7 +39,7 @@ try {
   return (
         <>
         <main>
-          <form onSubmit={Registrar}>
+          <form>
             <input
             type="text"
             value={nome}
@@ -38,9 +48,39 @@ try {
 
             <input
             type="text"
-            value={email}
-            placeholder="Email"
-            onChange={(event) => setEmail(event.target.value)}/>
+            value={autor}
+            placeholder="Autor"
+            onChange={(event) => setAutor(event.target.value)}/>
+
+            <input
+            type="text"
+            value={genero}
+            placeholder="Gênero"
+            onChange={(event) => setGenero(event.target.value)}/>
+
+            <input
+            type="text"
+            value={descricao}
+            placeholder="Descrição"
+            onChange={(event) => setDescricao(event.target.value)}/>
+
+            <input
+            type="number"
+            value={classificacao}
+            placeholder="Classificação Indicativa"
+            onChange={(event) => setClassificacao(event.target.value)}/>
+
+            <input
+            type="text"
+            value={colecao}
+            placeholder="Coleção"
+            onChange={(event) => setColecao(event.target.value)}/>
+
+            <input
+            type="number"
+            value={avaliacoes}
+            placeholder="Avaliações"
+            onChange={(event) => setAvaliacoes(event.target.value)}/>
             <button
             type="submit">Registrar</button>
           </form>
