@@ -39,7 +39,7 @@ try {
   return (
         <>
         <main>
-          <form>
+        <form onSubmit={Registrar}>
             <input
             type="text"
             value={nome}
@@ -65,7 +65,7 @@ try {
             onChange={(event) => setDescricao(event.target.value)}/>
 
             <input
-            type="number"
+            type="text"
             value={classificacao}
             placeholder="Classificação Indicativa"
             onChange={(event) => setClassificacao(event.target.value)}/>
@@ -81,8 +81,7 @@ try {
             value={avaliacoes}
             placeholder="Avaliações"
             onChange={(event) => setAvaliacoes(event.target.value)}/>
-            <button
-            type="submit">Registrar</button>
+            <button type="submit">Registrar</button>
           </form>
         </main>
         </>
